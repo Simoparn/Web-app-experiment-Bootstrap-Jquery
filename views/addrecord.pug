@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    title Add a new person record to the main list
+    link(rel="stylesheet" link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous")
+  body
+    ul(class="nav")
+      li(class="nav-item")
+        a(class="nav-link" href="/") Front page
+      li(class="nav-item")
+        a(class="nav-link" href="/listofrecords") List of person records
+      li(class="nav-item")
+        a(class="nav-link" href="/addrecord") Add a new person record
+      li(class="nav-item")
+        a(class="nav-link disabled") Disabled link
+    h1(style="padding-left:1%") New person record   
+    form(class="form-group", action='/addrecord', method='POST')
+      div(class="form-control-lg")
+       input(class="form-control-lg", type="text", name="firstname", placeholder="First name")
+       input(class="form-control-lg", type="text", name="lastname", placeholder="Last name")
+       input(class="form-control-lg", type="number", name="birthyear", placeholder="Birth year") 
+      div(class="form-control-lg")
+       input(class="btn btn-primary", type="submit", value="Add a new person to the list")

@@ -1,0 +1,32 @@
+doctype html
+html
+  head
+    title Person registry
+    link(rel="stylesheet" link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous")
+  body
+    ul(class="nav")
+      li(class="nav-item")
+        a(class="nav-link" href="/") Front page
+      li(class="nav-item")
+        a(class="nav-link" href="/listofrecords") List of person records
+      li(class="nav-item")
+        a(class="nav-link" href="/addrecord") Add a new person record
+      li(class="nav-item")
+        a(class="nav-link disabled") Disabled link
+    div.container
+      div(class="form-group")
+        a(href='/addrecord').btn.btn-primary Add a new person
+      div(class="form-group")
+        table.table.table-striped
+          tbody
+            thead 
+              td First name
+              td Last name 
+              td Year of birth
+            each record in records
+              tr
+                td #{record.firstname}
+                td #{record.lastname}
+                td #{record.birthyear}
+    
+      
